@@ -102,12 +102,12 @@
 
   .gol {
     position: absolute;
-    top: 20px; /* Adjust top position for spacing */
-    left: 65px; /* Adjust left position for spacing */
+    top: 20px; 
+    left: 65px; 
     z-index: 100;
     width: auto;
     height: auto;
-    max-width: 100px; /* Adjust maximum width as needed */
+    max-width: 100px; 
   }
 
   

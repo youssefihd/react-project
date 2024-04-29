@@ -8,10 +8,6 @@ import gol from "../assets/gog.png";
 
 
 
-
-
-
-
 const Login = () => {
   const [ showPassword, setShowPassword ] = useState(false);
 
@@ -41,7 +37,10 @@ const Login = () => {
 
 
       </div>
-      
+
+
+
+
       <div className="login-right">
         <div className="login-right-container">
           <div className="login-logo">
