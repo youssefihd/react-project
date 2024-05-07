@@ -1,11 +1,27 @@
-import Login from "./components/Login"
-import signup from "./components/registration"
+import React, { useState } from "react";
+import Login from "./components/Login";
+import Registration from "./components/registration";
 
 function App() {
+  const [showLogin, setShowLogin] = useState(true);
+
+  const handleSignUpClick = () => {
+    setShowLogin(false); // Show registration view
+  };
+
+  const handleSignInClick = () => {
+    setShowLogin(true); // Show login view
+  };
 
   return (
-    <><Login /><signup /></>
-  )
+    <div className="app">
+      {showLogin ? (
+        <Login onSignUpClick={handleSignUpClick} />
+      ) : (
+        <Registration onSignInClick={handleSignInClick} />
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;

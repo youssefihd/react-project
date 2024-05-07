@@ -1,21 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
 import "./responsive.css";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-)
+);
 
-const withMT = require("@material-tailwind/react/utils/withMT");
+// Assuming you no longer need this, but if you do, import using ES module syntax
+// import withMT from "@material-tailwind/react/utils/withMT";
 
-module.exports = withMT({
-  content: [],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-});
+// Any other necessary imports or code here

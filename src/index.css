@@ -118,12 +118,6 @@ body{
 
 
 
-
-
-
-
-
-
 .login-right{
   max-width: 700px;
   height: 80vh;
@@ -304,3 +298,98 @@ form button[type='button'] {
   transition: all 0.1s ease;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.name-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.name-inputs input {
+  width: 48%; /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Add margin between the two name fields */
+.name-inputs input:first-child {
+  margin-right: 4%; /* Adjust the margin as desired */
+}
+
+
+
+
+
+
+.login1-bottom-p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.login1-bottom-p a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login1-bottom-p a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.login-center1{
+  margin: auto 0;
+}
+
+.login-logo img{
+  width: 90px;
+}
+
+.login-center1 h2{
+  font-size: 3.5rem;
+}
+
+.login-center1{
+  text-align: center;
+}
+
+.login-center1 p{
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}

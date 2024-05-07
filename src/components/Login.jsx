@@ -7,36 +7,26 @@ import { FaEyeSlash } from "react-icons/fa6";
 import gol from "../assets/gog.png";
 
 
-
-const Login = () => {
-  const [ showPassword, setShowPassword ] = useState(false);
-
+const Login = ({ onSignUpClick }) => {
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="login-main">
-    <img src={gol} alt="Logo" class="gol"/>
+      <img src={gol} alt="Logo" className="gol" />
       <div className="login-left">
-     
-
-
-
-      <div className="line"></div>
-      <div className="text-container">
-      <span className="feel-good-text">Feel good <br/> about <br /> Payments</span>
-      <p className="additional-text"><strong>HPS:</strong> Global leaders in innovative payment solutions  <br/> with PowerCARD, trusted worldwide.</p>
-      
+        <div className="line"></div>
+        <div className="text-container">
+          <span className="feel-good-text">Feel good<br/>about<br/>Payments</span>
+          <p className="additional-text"><strong>HPS:</strong> Global leaders in innovative payment solutions<br/>with PowerCARD, trusted worldwide.</p>
         </div>
         <img src={Image} alt="" />
-        
-       
         <a href="https://www.hps-worldwide.com/about-hps" target="_blank" rel="noopener noreferrer">
-    <button   className="more-about-button">More about HPS</button>
-  </a>
-        
-
-
-
+          <button className="more-about-button">More about HPS</button>
+        </a>
       </div>
+
+
+
 
 
 
@@ -44,6 +34,8 @@ const Login = () => {
       <div className="login-right">
         <div className="login-right-container">
           <div className="login-logo">
+
+
             <img src={Logo} alt="" />
           </div>
           <div className="login-center">
@@ -53,10 +45,12 @@ const Login = () => {
               <input type="email" placeholder="Email" />
               <div className="pass-input-div">
                 <input type={showPassword ? "text" : "password"} placeholder="Password" />
-                {showPassword ? <FaEyeSlash onClick={() => {setShowPassword(!showPassword)}} /> : <FaEye onClick={() => {setShowPassword(!showPassword)}} />}
-                
+                {showPassword ? (
+                  <FaEyeSlash onClick={() => setShowPassword(!showPassword)} />
+                ) : (
+                  <FaEye onClick={() => setShowPassword(!showPassword)} />
+                )}
               </div>
-
               <div className="login-center-options">
                 <div className="remember-div">
                   <input type="checkbox" id="remember-checkbox" />
@@ -68,6 +62,9 @@ const Login = () => {
                   Forgot password?
                 </a>
               </div>
+
+
+              
               <div className="login-center-buttons">
                 <button type="button">Log In</button>
                 <button type="button">
@@ -77,9 +74,8 @@ const Login = () => {
               </div>
             </form>
           </div>
-
           <p className="login-bottom-p">
-            Don't have an account? <a href="#">Sign Up</a>
+            Don't have an account? <a href="#" onClick={onSignUpClick}>Sign Up</a>
           </p>
         </div>
       </div>
