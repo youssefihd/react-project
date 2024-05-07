@@ -69,6 +69,7 @@ body{
   background-image: url('../src/assets/gray.jpg');
   background-size: cover;
   background-position: center;
+  
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -393,3 +394,61 @@ form button[type='button'] {
   font-size: 2rem;
   margin-bottom: 40px;
 }
+
+
+
+
+
+
+  
+    @media screen and (max-width: 1366px) {
+    
+      .login-center1 h2{
+        font-size: 2.5rem;
+      }
+      
+      .login-center1{
+        text-align: center;
+      }
+      
+      .login-center1 p{
+        font-weight: 400;
+        font-size: 2rem;
+        margin-bottom: 40px;
+      }
+
+      .login-center2{
+        text-align: center;
+        font-size: 5rem;
+      }
+      
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* reponsive registration  */
+
+
+
