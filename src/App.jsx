@@ -18,7 +18,7 @@ function App() {
       {showLogin ? (
         <Login onSignUpClick={handleSignUpClick} />
       ) : (
-        <Registration onSignInClick={handleSignInClick} />
+        <Registration onSignInClick={handleSignInClick} /> // Pass handleSignInClick as a prop
       )}
     </div>
   );
