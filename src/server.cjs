@@ -56,7 +56,7 @@ app.post('/register', async (req, res) => {
     console.log('Hashed password:', hashedPassword); // Log hashed password
 
     const result = await pool.query(
-      'INSERT INTO users (email, password, first_name, last_name, company_department) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      'INSERT INTO users (eamil, password, first_name, last_name, company_department) VALUES ($1, $2, $3, $4, $5) RETURNING *',
       [email, hashedPassword, firstName, lastName, companyDepartment]
     );
 

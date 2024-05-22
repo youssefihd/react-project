@@ -1,100 +1,132 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./InstitutionForm.css"; // Create this CSS file for styles
+import React, { useState, useEffect } from "react";
+import "../InstitutionForm.css"; // Ensure the correct path to your CSS file
+import institutionLogo from "../assets/pop.png"; // Adjust the path as necessary
 
 const InstitutionForm = () => {
   const [formData, setFormData] = useState({
-    institution_id: "",
-    status: "",
-    max_nbr_of_users: "",
-    max_nbr_of_protocols: "",
-    max_nbr_of_channels: "",
-    max_tps: ""
+    institutionId: "",
+    status: "normal", // Default value
+    maxNbrOfUsers: "",
+    maxNbrOfProtocols: "",
+    maxNbrOfChannels: "",
+    maxTps: ""
   });
 
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  useEffect(() => {
+    document.body.classList.add('inst-body');
+    return () => {
+      document.body.classList.remove('inst-body');
+    };
+  }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
-    try {
-      const response = await axios.post("http://localhost:3000/institutions", formData);
-      setSuccess("Institution added successfully!");
-      setFormData({
-        institution_id: "",
-        status: "",
-        max_nbr_of_users: "",
-        max_nbr_of_protocols: "",
-        max_nbr_of_channels: "",
-        max_tps: ""
-      });
-    } catch (error) {
-      setError("An error occurred. Please try again.");
-    }
+    console.log("Form data submitted:", formData);
+  };
+
+  const handleCancel = () => {
+    // Add functionality for cancel button
   };
 
   return (
-    <div className="institution-form-container">
-      <form onSubmit={handleSubmit} className="institution-form">
-        <h2>Add Institution</h2>
-        <input
-          type="text"
-          name="institution_id"
-          placeholder="Institution ID"
-          value={formData.institution_id}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="status"
-          placeholder="Status"
-          value={formData.status}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          name="max_nbr_of_users"
-          placeholder="Max Number of Users"
-          value={formData.max_nbr_of_users}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          name="max_nbr_of_protocols"
-          placeholder="Max Number of Protocols"
-          value={formData.max_nbr_of_protocols}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          name="max_nbr_of_channels"
-          placeholder="Max Number of Channels"
-          value={formData.max_nbr_of_channels}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          name="max_tps"
-          placeholder="Max TPS"
-          value={formData.max_tps}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Submit</button>
-        {error && <p className="error-message">{error}</p>}
-        {success && <p className="success-message">{success}</p>}
-      </form>
+    <div className="inst-form-container">
+      <img src={institutionLogo} alt="Institution Logo" className="inst-logo" />
+      <div className="inst-form-wrapper">
+        <h2>Institution Form</h2>
+        <form onSubmit={handleSubmit} className="inst-form">
+          <div className="inst-form-group">
+            <label htmlFor="institutionId">Institution ID</label>
+            <input
+
+              type="text"
+              id="institutionId"
+              name="institutionId"
+              value={formData.institutionId}
+              onChange={handleChange}
+              required
+            />
+
+          </div>
+          <div className="inst-form-group">
+            <label>Status</label>
+            <div className="inst-radio-group">
+              <label>
+                <input
+                  type="radio"
+                  name="status"
+                  value="normal"
+                  checked={formData.status === 'normal'}
+                  onChange={handleChange}
+                />
+                Normal
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="status"
+                  value="canceled"
+                  checked={formData.status === 'canceled'}
+                  onChange={handleChange}
+                />
+                Canceled
+              </label>
+            </div>
+          </div>
+          <div className="inst-form-group">
+            <label htmlFor="maxNbrOfUsers">Max Number of Users</label>
+            <input
+              type="number"
+              id="maxNbrOfUsers"
+              name="maxNbrOfUsers"
+              value={formData.maxNbrOfUsers}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="inst-form-group">
+            <label htmlFor="maxNbrOfProtocols">Max Number of Protocols</label>
+            <input
+              type="number"
+              id="maxNbrOfProtocols"
+              name="maxNbrOfProtocols"
+              value={formData.maxNbrOfProtocols}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="inst-form-group">
+            <label htmlFor="maxNbrOfChannels">Max Number of Channels</label>
+            <input
+              type="number"
+              id="maxNbrOfChannels"
+              name="maxNbrOfChannels"
+              value={formData.maxNbrOfChannels}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="inst-form-group">
+            <label htmlFor="maxTps">Max TPS</label>
+            <input
+              type="number"
+              id="maxTps"
+              name="maxTps"
+              value={formData.maxTps}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="inst-buttons-container">
+            <button type="button" className="inst-cancel-button" onClick={handleCancel}>Cancel</button>
+            <button type="submit" className="inst-submit-button">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -1,53 +1,142 @@
-.institution-form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
+.inst-body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url('../src/assets/gray.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inst-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.inst-logo {
+  max-width: 150px; /* Adjust as needed */
+  margin-bottom: -25px; /* Reduce margin-bottom to move the form higher */
+}
+
+
+.inst-form-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
+  min-width: 600px; /* Set a minimum width */
+  text-align: center;
+  margin: 10px auto; /* Adjust margin-top to move the form higher */
+}
+
+
+.inst-form-wrapper h2 {
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.inst-form {
+  width: 100%;
+}
+
+.inst-form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.inst-form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.inst-form-group input[type="text"],
+.inst-form-group input[type="number"] {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bold; /* Add font-weight: bold; */
   
-  .institution-form {
-    background-color: #f5f5f5;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .institution-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .institution-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .institution-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .institution-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
-  
-  .success-message {
-    color: green;
-    margin-top: 10px;
-  }
-  
+}
+
+
+
+
+
+.inst-form-group input[type="text"]:focus,
+.inst-form-group input[type="number"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+.inst-radio-group {
+  display: flex;
+  justify-content: flex-start; /* Align to the start */
+  align-items: center;
+  padding-left: 5px; /* Adjust the padding to move the buttons slightly to the right */
+}
+
+.inst-radio-group label {
+  font-size: 1.5rem;
+  color: #555;
+  margin-right: 95px; /* Adjust margin-right to bring the buttons closer */
+}
+
+.inst-radio-group input[type="radio"] {
+  margin-right: 12px; /* Adjust margin between radio buttons */
+  transform: scale(1.4); /* Adjust the size of the radio buttons if necessary */
+}
+
+
+.inst-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inst-submit-button,
+.inst-cancel-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.7rem;
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease; /* Add transition for border */
+}
+
+.inst-submit-button {
+  background: black; /* Set background color for submit button */
+  color: white; /* Set text color for submit button */
+  border: 2px solid transparent; /* Add border to submit button */
+  width: 170px; /* Adjust width as needed */
+}
+
+
+.inst-cancel-button {
+  max-width: 180px; /* Adjust max-width as needed */
+  height: 48px; /* Adjust height as needed */
+  padding: 10px; /* Adjust padding as needed */
+  font-size: 1rem; /* Adjust font size to make the text smaller */
+  border: 2px solid gray; /* Add border to cancel button */
+}
+
+
+.inst-cancel-button:hover {
+  background: lightgray; /* Change background color on hover */
+}
+.inst-submit-button:hover {
+  background: rgb(17, 164, 3); /* Change background color on hover */
+
+}
