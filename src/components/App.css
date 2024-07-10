@@ -1,0 +1,272 @@
+.menu .App {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.your-component .App-header {
+  background-color: #3f51b5;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 200px; /* Width of the left sidebar */
+  position: relative; /* Ensure relative positioning for absolute children */
+}
+
+.your-component .App-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #61dafb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Make buttons take full width */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  height: 3rem; /* Ensure consistent height */
+}
+
+.your-component .App-menu:hover {
+  background-color: #007ad9;
+}
+
+.your-component .App-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.your-component .App-header-right {
+  position: relative;
+  width: calc(100% - 200px); /* Adjust for the sidebar width */
+}
+
+.your-component .p-tabmenu {
+  position: absolute;
+  top: 20px;
+  right: -1px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.form-wrapper {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  max-width: 700px;
+  transform: translateY(-100px); /* Move form up */
+}
+
+.p-float-label {
+  margin-bottom: 2rem;
+}
+
+.p-float-label input,
+.p-float-label .p-inputnumber {
+  font-size: 1.2rem;
+  height: 3rem;
+}
+
+.custom-button {
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  height: 3rem;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-left: 120px;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.p-float-label {
+  flex: 1;
+}
+
+.button {
+  background-color: rgba(70, 127, 234, 0.994);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.App-header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Align buttons to stretch full width */
+  width: 100%; /* Ensure the header left takes full width */
+}
+
+.App-menu {
+  margin-bottom: 10px;
+}
+
+.App-header-right {
+  display: flex;
+  gap: 10px;
+}
+
+.App-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 3px;
+  color: #282c34;
+}
+
+.App-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.button:hover {
+  background-color: #88ccf9;
+}
+
+.App-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #61dafb;
+  border-radius: 5px;
+}
+
+.App-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+@keyframes slideDown {
+  to {
+    top: 20px; /* Final position */
+  }
+}
+/* Styles for institution manager */
+.institution-manager {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Input section styles */
+.input-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Institution list styles */
+.institution-list {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.institution-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.institution-table th,
+.institution-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.institution-table th {
+  background-color: #f0f0f0;
+}
+
+.institution-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Button styles */
+.institution-item button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+
+/* Institution.css */
+
+/* Style pour le conteneur principal */
+.institution-manager {
+  margin: 20px;
+}
+
+/* Style pour la section des entrées et des boutons */
+.input-section {
+  margin-bottom: 10px;
+}
+/* Style pour le bouton Update */
+.update-button {
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Texte blanc */
+  border: none; /* Supprimer la bordure */
+  padding: 8px 16px; /* Espacement intérieur */
+  margin-right: 8px; /* Marge à droite */
+  cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+  border-radius: 4px; /* Bordure arrondie */
+}
+
+/* Style pour le bouton Delete */
+.delete-button {
+  background-color: #dc3545; /* Couleur de fond rouge */
+  color: white; /* Texte blanc */
+  border: none; /* Supprimer la bordure */
+  padding: 8px 16px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+  border-radius: 4px; /* Bordure arrondie */
+}
+
+/* Effet au survol */
+.update-button:hover,
+.delete-button:hover {
+  opacity: 0.8; /* Réduire l'opacité au survol */
+}

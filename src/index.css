@@ -1,472 +1,358 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 
-*{
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-html{
-  font-size: 10px;
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
 }
 
-body{
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
+a:hover {
+    color: #535bf2;
 }
 
-.login-main{
-  display: flex;
-  position: relative;
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    padding: 10rem;
 }
 
-.feel-good-text {
-  position: absolute;
-  top: 45%;
-  left: 5vw;  
-  transform: translateY(-50%);
-  font-family: 'Noto Serif', serif;
-  font-size: 5vw; 
-  font-weight: 500;
-  color: #2A332A;
-  line-height: 1.1;
-  z-index: 1;
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
 }
 
-.additional-text {
-  font-family: 'TT Hoves', sans-serif;
-  font-size: 1vw;
-  color: #2A332A;
-  margin-top: 16vw;
-  margin-left: 10.8vw;
-  letter-spacing: 0.12vw;
-  white-space: nowrap;
-  position: absolute;
-  left: -5.5vw;
-  top: 32vh;
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
 
-.text-container {
-  text-align: left;
+button:hover {
+    border-color: #646cff;
 }
 
-.line {
-  width: 90%;
-  height: 1px;
-  background-color: #2A332A;
-  position: absolute;
-  top: 130px;
-  left: 50%;
-  transform: translateX(-50%);
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
 }
 
-.login-left {
-  max-width: 70%; 
-  width: 50%;
-  flex-grow: 1;
-  height: 100vh;
-  background-image: url('../src/assets/gray.jpg');
-  background-size: cover;
-  background-position: center;
-  
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+@media (prefers-color-scheme: light) {
+     :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
 }
 
-.login-left img {
-  width: 58%; 
-  margin-left:5%;
-  position: relative;
-  left: -7%;
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    /* Adjust as needed */
 }
 
-.gol {
-  position: absolute;
-  top: 1px; 
-  left: 60px; 
-  z-index: 100;
-  width: auto;
-  height: auto;
-  max-width: 290px; 
+.form-wrapper .form {
+    width: 600px;
 }
 
-.more-about-button {
-  background-color: #322e2e; 
-  border: none;
-  color: white; 
-  padding: 15px 32px; 
-  text-align: center; 
-  text-decoration: none; 
-  display: block; 
-  width: auto; 
-  font-size: 16px; 
-  position: absolute; 
-  bottom: 180px; 
-  left: 101px; 
-  cursor: pointer; 
-  border-radius: 8px; 
-  transition: background-color 0.3s ease; 
+.p-fluid {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
 }
 
-.more-about-button:hover {
-  background-color: #45a049;
+.custom-button {
+    background-color: #4CAF50;
+    /* Couleur de fond verte */
+    color: white;
+    /* Couleur du texte blanche */
+    border: none;
+    /* Pas de bordure */
+    padding: 15px 32px;
+    /* Espacement interne */
+    text-align: center;
+    /* Alignement du texte */
+    text-decoration: none;
+    /* Pas de soulignement */
+    display: inline-block;
+    /* Affichage en ligne */
+    font-size: 16px;
+    /* Taille de la police */
+    margin: 4px 2px;
+    /* Marges */
+    cursor: pointer;
+    /* Curseur en forme de main */
 }
 
-
-
-
-.login-right{
-  max-width: 700px;
-  height: 80vh;
-  width: 800px;
-  flex-grow: 1;
+.top-section {
+    display: flex;
+    align-items: left;
 }
 
-.login-right-container{
-  height: 100%;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-input[type="email"],
-input[type="password"]{
-  font-weight: 520; 
-  font-size: 16px;
-}
-
-.login-right form{
-  display: flex;
-  flex-direction: column;
-}
-
-.login-logo{
-  align-self: center;
-  padding-top: 220px;
-  
-  
-}
-
-.login-center{
-  margin: auto 0;
-}
-
-.login-logo img{
-
-  width: 150px;
-  max-width: none;
-  height: auto;
-  position: relative;
-  top: 20px; /* Adjust the value as needed to move the logo down */
-}
-
-.login-center h2{
-  font-size: 4.5rem;
-}
-
-.login-center{
-  text-align: center;
-}
-
-.login-center p{
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-form input[type='email'],
-form input[type='password'],
-form input[type='text'] {
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 16px;
-  border: 0px;
-  border-bottom: 1px solid black;
-  outline: none;
-  box-sizing: border-box;
-}
-
-.pass-input-div{
-  position: relative;
-}
-
-.pass-input-div svg{
-  font-size: 20px;
-  position: absolute;
-  right: 10px;
-  bottom: 35px;
-  cursor: pointer;
-  outline: none;
-}
-
-form button[type='button'] {
-  width: 100%;
-  padding: 16px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 30px;
-  font-weight: 600;
-}
-
-.login-center-options{
-  display: flex;
-  justify-content: space-between;
-}
-
-.remember-div{
-  display:flex;
-  align-items: center;
-  column-gap: 5px;
-}
-
-.remember-div label{
-  font-size: 1.3rem;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 2px;
-}
-
-.forgot-pass-link{
-  text-decoration: none;
-  font-size: 1.3rem;
-}
-
-.forgot-pass-link:hover{
-  text-decoration: underline;
-}
-/* Reset button styles */
-.login-center-buttons button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%; /* Adjust width as needed */
-  padding: 10px 20px; /* Adjust padding as needed */
-  font-size: 21px; /* Adjust font size as needed */
-  border-radius: 2.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  text-align: center;
-}
-
-/* Custom styles for both buttons */
-.login-center-buttons{
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-}
-
-.login-center-buttons button:nth-child(1) {
-  background-color: black;
-  color: white;
-  border: 3px solid black;
-}
-
-.login-center-buttons button:nth-child(1):hover {
-  color: #333;
-  background-color: white;
-}
-
-.login-center-buttons button:nth-child(2) {
-  background-color: #F0F0F0;
-  column-gap: 10px;
-}
-
-.login-center-buttons button:nth-child(2) img {
-  width: 30px;
-}
-
-.login-center-buttons button:nth-child(2):hover {
-  background-color: #c4c4c457;
-}
-
-.login-bottom-p{
-  text-align: center;
-  font-size: 1.5rem;
-  margin-top: 20px;
-
-}
-
-.login-bottom-p a{
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-bottom-p a:hover{
-  text-decoration: underline;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align items to the start of the flex container */
 }
 
 .logo {
-  position: fixed;
-  top: 80px;
-  left: 70px;
-  z-index: 1000;
-  width: 80px;
-  height: auto;
+    width: 100px;
+    /* Adjust as needed */
+    margin-right: 10px;
+    /* Adjust as needed */
 }
 
-.feel-good-text, .additional-text, .text-container, .line, .login-left img {
-  transition: all 0.1s ease;
+.title {
+    font-size: 1.5rem;
+    /* Taille de police pour le titre */
+    margin-top: 10px;
+    /* Espacement entre le logo et le titre */
+    color: #333;
+    /* Couleur du titre */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.name-inputs {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 12px;
+.title {
+    font-size: 2em;
+    /* Taille de police */
+    color: #D63530;
+    /* Couleur du texte */
+    text-align: center;
+    /* Alignement du texte */
+    margin-top: 0;
+    /* Marge en haut */
+    margin-bottom: 0;
+    /* Marge en bas */
+    font-family: 'Arial', sans-serif;
+    /* Police de caractères */
+    margin-left: 6px;
 }
 
-.name-inputs input {
-  width: 48%; /* Adjust width as needed */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.title2 {
+    font-size: 1.5rem;
+    /* Taille de police pour le titre */
+    margin-top: 10px;
+    /* Espacement entre le logo et le titre */
+    color: #333;
+    /* Couleur du titre */
+    text-align: center;
 }
+  
 
-/* Add margin between the two name fields */
-.name-inputs input:first-child {
-  margin-right: 4%; /* Adjust the margin as desired */
-}
-
-
-
-
-
-
-.login1-bottom-p {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-top: 20px;
-}
-
-.login1-bottom-p a {
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login1-bottom-p a:hover {
-  text-decoration: underline;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.login-center1{
-  margin: auto 0;
-}
-
-.login-logo img{
-  width: 90px;
-}
-
-.login-center1 h2{
-  font-size: 3.5rem;
-}
-
-.login-center1{
-  text-align: center;
-}
-
-.login-center1 p{
-  font-weight: 400;
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-
-
-
-
+  .App {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .App-header {
+    background-color: #3f51b5;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 200px; /* Width of the left sidebar */
+    position: relative; /* Ensure relative positioning for absolute children */
+  }
 
   
-    @media screen and (max-width: 1366px) {
-    
-      .login-center1 h2{
-        font-size: 2.5rem;
-      }
-      
-      .login-center1{
-        text-align: center;
-      }
-      
-      .login-center1 p{
-        font-weight: 400;
-        font-size: 2rem;
-        margin-bottom: 40px;
-      }
+  .App-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #61dafb;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .App-menu:hover {
+    background-color: #007ad9;
+  }
+  
+  .App-content {
+    flex: 1;
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+  }
+  
+  .App-header-right {
+    position: absolute;
+    top: -100px; /* Adjust top position */
+    right: -800px; /* Adjust right position */
+  }
+  
+  .p-tabmenu {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  .App-header-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .App-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #61dafb;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .App-menu:hover {
+    background-color: #007ad9;
+  }
+  
+  .App-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+  }
+  
+  .App-header-right {
+    position: relative;
+    width: calc(100% - 200px); /* Adjust for the sidebar width */
+  }
+  
+  .p-tabmenu {
+    position: absolute;
+    top: 20px;
+    right: -1px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  /* Styles for institution manager */
+.institution-manager {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-      .login-center2{
-        text-align: center;
-        font-size: 5rem;
-      }
-      
-      }
+/* Input section styles */
+.input-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
+.input-section button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
+/* Institution list styles */
+.institution-list {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
 
+.institution-table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+.institution-table th,
+.institution-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
 
+.institution-table th {
+  background-color: #f0f0f0;
+}
 
+.institution-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
+/* Button styles */
+.institution-item button {
+  margin-right: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+/* Institution.css */
 
+/* Style pour le conteneur principal */
+.institution-manager {
+  margin: 20px;
+}
 
+/* Style pour la section des entrées et des boutons */
+.input-section {
+  margin-bottom: 10px;
+}
+/* Style pour le bouton Update */
+.update-button {
+  background-color: #007bff; /* Couleur de fond bleue */
+  color: white; /* Texte blanc */
+  border: none; /* Supprimer la bordure */
+  padding: 8px 16px; /* Espacement intérieur */
+  margin-right: 8px; /* Marge à droite */
+  cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+  border-radius: 4px; /* Bordure arrondie */
+}
 
+/* Style pour le bouton Delete */
+.delete-button {
+  background-color: #dc3545; /* Couleur de fond rouge */
+  color: white; /* Texte blanc */
+  border: none; /* Supprimer la bordure */
+  padding: 8px 16px; /* Espacement intérieur */
+  cursor: pointer; /* Curseur pointer pour indiquer l'interaction */
+  border-radius: 4px; /* Bordure arrondie */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* reponsive registration  */
-
-
-
+/* Effet au survol */
+.update-button:hover,
+.delete-button:hover {
+  opacity: 0.8; /* Réduire l'opacité au survol */
+}

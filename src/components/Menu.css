@@ -1,0 +1,54 @@
+/* Menu.css */
+.menu .App {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  
+  .your-component .App-header {
+    background-color: #3f51b5;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 200px; /* Width of the left sidebar */
+    position: relative; /* Ensure relative positioning for absolute children */
+  }
+  
+  .your-component .App-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #61dafb;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .your-component .App-menu:hover {
+    background-color: #007ad9;
+  }
+  
+  .your-component .App-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+  }
+  
+  .your-component .App-header-right {
+    position: relative;
+    width: calc(100% - 200px); /* Adjust for the sidebar width */
+  }
+  
+  .your-component .p-tabmenu {
+    position: absolute;
+    top: 20px;
+    right: -1px;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  

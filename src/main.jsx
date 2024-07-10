@@ -1,16 +1,34 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.jsx';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 import './index.css';
-import "./responsive.css";
+import { PrimeReactProvider } from 'primereact/api';
+import { ReactKeycloakProvider } from '@react-keycloak/web';
+import Keycloak from 'keycloak-js';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+// Initialize Keycloak instance
+const keycloak = new Keycloak({
+  url: 'http://localhost:8080', // Ensure the correct Keycloak server URL
+  realm: 'wallet-realm',             // Keycloak realm
+  clientId: 'react-login-client'          // Keycloak client ID
+});
+
+const keycloakProviderInitConfig = {
+  onLoad: 'login-required',
+  checkLoginIframe: false,
+  pkceMethod: 'S256'
+};
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PrimeReactProvider>
+      <ReactKeycloakProvider authClient={keycloak} >
+        <App />
+      </ReactKeycloakProvider>
+    </PrimeReactProvider>
   </React.StrictMode>,
+  document.getElementById('root')
 );
-
-// Assuming you no longer need this, but if you do, import using ES module syntax
-// import withMT from "@material-tailwind/react/utils/withMT";
-
-// Any other necessary imports or code here
